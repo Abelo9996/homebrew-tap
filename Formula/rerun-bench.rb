@@ -3,8 +3,8 @@ class RerunBench < Formula
 
   desc "Run one coding task many times per agent to measure consistency and cost"
   homepage "https://github.com/Abelo9996/rerun-bench"
-  url "https://files.pythonhosted.org/packages/e8/a9/16c9a30f68c7e454c5f7ae7cc3c80f796a214dbba7ce57848068cd98e70d/rerun_bench-0.1.1.tar.gz"
-  sha256 "19aa3eb7a8031a6b32349dbf153ba8223bf75f83b7371aff0497c08375146aeb"
+  url "https://files.pythonhosted.org/packages/5c/0c/c70c7680385b81f4eed6ed4e225e70ef898920085968dac6b335e1dcf93e/rerun_bench-0.2.0.tar.gz"
+  sha256 "7d34a76fe1a1b045755bd9bd47628af5c796447a632e1fc935463a9254b65dbe"
   license "MIT"
 
   depends_on "python@3.13"
