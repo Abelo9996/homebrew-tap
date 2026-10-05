@@ -24,7 +24,7 @@ class SnapBack < Formula
       snapshot = shell_output("#{bin}/snap-back snap")[/Snapshot (\h+)/, 1]
       refute_nil snapshot
 
-      (project/"notes.txt").write "second\n"
+      File.write(project/"notes.txt", "second\n")
       assert_match "notes.txt", shell_output("#{bin}/snap-back diff")
 
       system bin/"snap-back", "restore", snapshot, "--yes"
