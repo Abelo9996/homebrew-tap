@@ -1,0 +1,66 @@
+name: Install and test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash -xeuo pipefail {0}
+
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ macos-latest ]
+        include:
+          - os: ubuntu-latest
+            container:
+              image: ghcr.io/homebrew/brew:main
+              options: --privileged
+    runs-on: ${{ matrix.os }}
+    container: ${{ fromJSON(toJSON(matrix.container)) }} # zizmor: ignore[unpinned-images]
+    permissions:
+      contents: read
+    env:
+      FORMULAE: nerf-watch snap-back agent-fence rerun-bench
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@e99025eb970cfa124b8284a35463d87426917478 # 2026.09.28.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trust this tap
+        run: brew trust "${{ steps.set-up-homebrew.outputs.tap-name }}"
+
+      - name: Style
+        run: brew style "${{ steps.set-up-homebrew.outputs.tap-name }}"
+
+      - name: Audit
+        run: brew audit --strict --online --tap="${{ steps.set-up-homebrew.outputs.tap-name }}"
+
+      - name: Install and test formulae
+        env:
+          TAP: ${{ steps.set-up-homebrew.outputs.tap-name }}
+        run: |
+          for formula in ${FORMULAE}; do
+            brew install --build-from-source "${TAP}/${formula}"
+            brew test --verbose "${TAP}/${formula}"
+          done
+
+      - name: Install and uninstall cask
+        if: runner.os == 'macOS'
+        env:
+          TAP: ${{ steps.set-up-homebrew.outputs.tap-name }}
+        run: |
+          brew install --cask "${TAP}/nerf-watch-app"
+          test -d "/Applications/Nerf Watch.app"
+          brew uninstall --cask "${TAP}/nerf-watch-app"
+          test ! -e "/Applications/Nerf Watch.app"
