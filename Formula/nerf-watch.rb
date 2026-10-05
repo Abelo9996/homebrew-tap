@@ -1,8 +1,8 @@
 class NerfWatch < Formula
   desc "Flag coding agent regressions and cost changes from local session logs"
   homepage "https://github.com/Abelo9996/nerf-watch"
-  url "https://registry.npmjs.org/nerf-watch/-/nerf-watch-0.2.1.tgz"
-  sha256 "06ce7ffedb46ddec1ff044cf677dddb14e0103ce11ac8caaaa92acc7e0c45b46"
+  url "https://registry.npmjs.org/nerf-watch/-/nerf-watch-0.3.0.tgz"
+  sha256 "fa19a2157a36d606bf8b8b53323bacc44aa865c19ea57e020dd6f30a3d0924c8"
   license "MIT"
 
   depends_on "node"

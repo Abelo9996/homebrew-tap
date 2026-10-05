@@ -1,8 +1,8 @@
 class SnapBack < Formula
   desc "Snapshot a project into a shadow git repo and roll back coding agent edits"
   homepage "https://github.com/Abelo9996/snap-back"
-  url "https://registry.npmjs.org/@abelo9996/snap-back/-/snap-back-0.1.1.tgz"
-  sha256 "b6248440b985e3e4e7d61619641bd0e9a8baa99bb0c61084d08883b6d586f7dc"
+  url "https://registry.npmjs.org/@abelo9996/snap-back/-/snap-back-0.1.2.tgz"
+  sha256 "bc1aeba549f11f217cdfc7fd910bc404b4619df5191a621e9887ec3ba68feb94"
   license "MIT"
 
   depends_on "node"
