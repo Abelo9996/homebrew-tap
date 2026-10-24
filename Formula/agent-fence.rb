@@ -1,8 +1,8 @@
 class AgentFence < Formula
   desc "Shared permission policy for coding agent tool calls"
   homepage "https://github.com/Abelo9996/agent-fence"
-  url "https://registry.npmjs.org/@abelo9996/agent-fence/-/agent-fence-0.3.0.tgz"
-  sha256 "c8d3eae160a892e32837db3dcae515e843e5383fef52b8141940c8bcf8b6d59f"
+  url "https://registry.npmjs.org/@abelo9996/agent-fence/-/agent-fence-0.2.0.tgz"
+  sha256 "34cef342e73f28467e1574b06a5f6add55c7fb4ef48d2a9aa614cfb0164eb9b4"
   license "MIT"
 
   depends_on "node"
