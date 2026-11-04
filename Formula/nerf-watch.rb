@@ -1,8 +1,8 @@
 class NerfWatch < Formula
   desc "See and cut what loads into every coding agent session, and flag regressions"
   homepage "https://github.com/Abelo9996/nerf-watch"
-  url "https://registry.npmjs.org/nerf-watch/-/nerf-watch-0.5.0.tgz"
-  sha256 "7427b9a1b5405c38dd7ce787f272c15def50f93810e76c7edffb532d8e9d037b"
+  url "https://registry.npmjs.org/nerf-watch/-/nerf-watch-0.5.1.tgz"
+  sha256 "b6f01f27f05983138928f3c018c0b77546fbf0b16bdc91bcf3fd553fa983754d"
   license "MIT"
 
   depends_on "node"

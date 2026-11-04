@@ -1,6 +1,6 @@
 cask "nerf-watch-app" do
-  version "0.4.0"
-  sha256 "7c3784cbdae68183ada9c714e950b60b68687e171319452ecc27239fd7a7e1ea"
+  version "0.5.1"
+  sha256 "c423d4bc53a9d12a15bd522a80bd0aaf1b645f8c8b623ec2324b53cd901f440f"
 
   url "https://github.com/Abelo9996/nerf-watch/releases/download/v#{version}/NerfWatch-macOS.zip"
   name "Nerf Watch"
